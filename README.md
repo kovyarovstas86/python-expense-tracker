@@ -40,3 +40,19 @@ python src/main.py
 
 pytest
 
+\## Version
+
+
+
+Current project version: 2.0
+
+
+
+\## Updates
+
+
+
+Added expense validation
+
+and category search.
+
