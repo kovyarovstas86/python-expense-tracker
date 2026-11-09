@@ -31,7 +31,11 @@ def largest_expense(expenses):
 def validate_expense(amount):
     return amount > 0
 
-
+def search_category(expenses, category):
+    return [
+        item for item in expenses
+        if item["category"].lower() == category.lower()
+    ]
 if __name__ == "__main__":
     expenses = []
 
