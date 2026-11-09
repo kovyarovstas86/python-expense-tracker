@@ -20,11 +20,18 @@ def show_expenses(expenses):
     for item in expenses:
         print(item["category"], item["amount"])
 
+
 def largest_expense(expenses):
     if not expenses:
         return None
 
     return max(expenses, key=lambda x: x["amount"])
+
+
+def validate_expense(amount):
+    return amount > 0
+
+
 if __name__ == "__main__":
     expenses = []
 
@@ -38,9 +45,19 @@ if __name__ == "__main__":
         choice = input("Выберите действие: ")
 
         if choice == "1":
-            amount = float(input("Сумма: "))
-            category = input("Категория: ")
-            add_expense(expenses, amount, category)
+            try:
+                amount = float(input("Сумма: "))
+
+                if not validate_expense(amount):
+                    print("Сумма должна быть больше нуля")
+                    continue
+
+                category = input("Категория: ")
+                add_expense(expenses, amount, category)
+                print("Расход добавлен!")
+
+            except ValueError:
+                print("Ошибка: введите сумму числом")
 
         elif choice == "2":
             show_expenses(expenses)
