@@ -25,3 +25,12 @@ def test_average():
         {"amount": 2000, "category": "Transport"}
     ]
     assert calculate_average(data) == 1500
+from src.main import largest_expense
+
+
+def test_largest_expense():
+    data = [
+        {"amount": 1000, "category": "Food"},
+        {"amount": 5000, "category": "Shopping"}
+    ]
+    assert largest_expense(data)["amount"] == 5000
