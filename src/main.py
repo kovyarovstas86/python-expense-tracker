@@ -24,11 +24,28 @@ def show_expenses(expenses):
 if __name__ == "__main__":
     expenses = []
 
-    add_expense(expenses, 1500, "Food")
-    add_expense(expenses, 3000, "Transport")
-    add_expense(expenses, 2000, "Shopping")
+    while True:
+        print("\n=== УЧЁТ РАСХОДОВ ===")
+        print("1. Добавить расход")
+        print("2. Показать расходы")
+        print("3. Общая сумма")
+        print("0. Выход")
 
-    print("Expense tracker")
-    show_expenses(expenses)
-    print("Total:", calculate_total(expenses))
-    print("Average:", calculate_average(expenses))
+        choice = input("Выберите действие: ")
+
+        if choice == "1":
+            amount = float(input("Сумма: "))
+            category = input("Категория: ")
+            add_expense(expenses, amount, category)
+
+        elif choice == "2":
+            show_expenses(expenses)
+
+        elif choice == "3":
+            print("Всего:", calculate_total(expenses))
+
+        elif choice == "0":
+            break
+
+        else:
+            print("Неверный выбор")
