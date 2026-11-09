@@ -20,7 +20,11 @@ def show_expenses(expenses):
     for item in expenses:
         print(item["category"], item["amount"])
 
+def largest_expense(expenses):
+    if not expenses:
+        return None
 
+    return max(expenses, key=lambda x: x["amount"])
 if __name__ == "__main__":
     expenses = []
 
