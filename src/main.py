@@ -32,7 +32,9 @@ def largest_expense(expenses):
 def validate_expense(amount):
     return amount > 0
 
-
+def count_expenses(expenses):
+    """Возвращает количество записанных расходов."""
+    return len(expenses)
 if __name__ == "__main__":
     expenses = []
 
