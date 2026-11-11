@@ -1,3 +1,4 @@
+APP_TITLE = "Учёт расходов"
 def add_expense(expenses, amount, category):
     expenses.append({
         "amount": amount,
