@@ -1,6 +1,12 @@
 from src.main import (
     add_expense,
     calculate_total,
+    calculate_average,
+    count_expenses
+)
+from src.main import (
+    add_expense,
+    calculate_total,
     calculate_average
 )
 
@@ -34,3 +40,10 @@ def test_largest_expense():
         {"amount": 5000, "category": "Shopping"}
     ]
     assert largest_expense(data)["amount"] == 5000
+def test_count_expenses():
+    expenses = [
+        {"amount": 100, "category": "Food"},
+        {"amount": 200, "category": "Transport"},
+    ]
+
+    assert count_expenses(expenses) == 2
